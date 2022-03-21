@@ -1,0 +1,36 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,152,175,1) 33%, rgba(0,212,255,1) 100%); 
+}
+
+h1 {
+    text-align: center;
+}
+
+#button-choices{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+button {
+    height: 50px;
+    width: 90px;
+    box-sizing: border-box; /* Se usa para que el height and width se respete si o si. A veces se agrega al body para que todo sea asi*/
+    font-size: 17px;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    border-style: solid;
+    margin: 2rem auto;
+    width: 450px;
+    height: 200px;
+}
+
+p {
+    font-size: 20px;
+}

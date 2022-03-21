@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>El cashipún</h1>
+    <div id="button-choices">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
     
+    <!---  esto de abajo se deberia agregar dinamicamente cuando haya un ganador--->    
+    <div id="game">
+        <p id="player-choice"></p>
+        <p id="computer-choice"></p>
+        <p id="winner"></p>
+    </div>
 </body>
 </html>

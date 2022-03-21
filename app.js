@@ -1,33 +1,30 @@
-console.log("Hello world");
+const playerChoiceBTN = document.querySelectorAll("button");
+const playerChoiceDisplay = document.querySelector("#player-choice");
+const computerChoiceDisplay = document.querySelector("#computer-choice");
+const winnerDisplay = document.querySelector("#winner");
+const choices = ["rock", "paper", "scissors"];
+let playerChoice;
+let compSelection;
+
+playerChoiceBTN.forEach((button) => {
+    button.addEventListener("click", () => {
+        playerChoice = button.id; // al clickear un boton se guarda el id en la variable
+        computerChoice();
+        playerChoiceDisplay.innerText = "Your choice is " + playerChoice;
+        computerChoiceDisplay.innerText = "The computer choice is " + compSelection;
+        winnerDisplay.innerText = playRound(compSelection, playerChoice);      
+    });
+});
 
 // Funcion para que el computador eliga piedra, papel o tijera
-function computerPlay(){
-    let randomSelection = (Math.floor(Math.random() * 3) + 1);
-    let computerChoice;
-    if (randomSelection === 1) {
-        computerChoice = "rock";
-        return computerChoice;
-    }
-    else if (randomSelection === 2){
-        computerChoice = "paper";
-        return computerChoice;
-    }
-    else {
-        computerChoice = "scissors";
-        return computerChoice;
-    }
+function computerChoice(){
+    const randomChoice = Math.floor(Math.random() * choices.length);
+    compSelection = choices[randomChoice];
  }
-
-//Funcion para que el jugador elija piedra papel o tijera
-function playerPlay(){
-    let playerInput = window.prompt("Rock, paper or scissors?");
-    let playerChoice = playerInput.toLowerCase();
-    return playerChoice;
-}
 
 function playRound (computerSelection, playerSelection){
     if (computerSelection === playerSelection){
-        return "It's a tie!"
+        return "It's a tie!";
     }
     else if (  (computerSelection === "rock" && playerSelection === "scissors")
             || (computerSelection === "scissors" && playerSelection === "paper")
@@ -35,11 +32,13 @@ function playRound (computerSelection, playerSelection){
         return "The computer wins!";
     }
     else {
-        return "Player wins!"
+        return "Player wins!";
     }
 }
 
-function game(){
+
+
+/* function game(){
     let computerSelection = computerPlay();
     let playerSelection = playerPlay();
     console.log("The computer has chosen " + computerSelection);
@@ -49,3 +48,5 @@ function game(){
 }
 
 game();
+ */
+
